@@ -1,3 +1,10 @@
+##forked from [scalessec/Toast](https://github.com/scalessec/Toast)
+添加了一个中间件(二次封装)，修改了部分实现细节。
+
+1. 使用图片时，可以把图片垂直居中了；
+2. 使用makeToastActivity时，添加了是否禁用用户交互的选项。
+
+
 Toast for iOS
 =============
 

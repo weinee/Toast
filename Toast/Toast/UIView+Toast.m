@@ -294,6 +294,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     }
     
     if(imageView != nil) {
+		// 将图片的垂直中心和wrapperView对齐
+		imageView.center = CGPointMake(imageView.center.x, wrapperView.center.y);
         [wrapperView addSubview:imageView];
     }
     
@@ -326,14 +328,18 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 }
 
 #pragma mark - Activity Methods
+- (void)makeToastActivity:(id)position{
+	[self makeToastActivity:position userInteractionEnabled:YES];
+}
 
-- (void)makeToastActivity:(id)position {
+- (void)makeToastActivity:(id)position userInteractionEnabled:(BOOL)enable{
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     // sanity
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &CSToastActivityViewKey);
     if (existingActivityView != nil) return;
     
     CSToastStyle *style = [CSToastManager sharedStyle];
-    
+	
     UIView *activityView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, style.activitySize.width, style.activitySize.height)];
     activityView.center = [self cs_centerPointForPosition:position withToast:activityView];
     activityView.backgroundColor = style.backgroundColor;
@@ -352,11 +358,24 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     activityIndicatorView.center = CGPointMake(activityView.bounds.size.width / 2, activityView.bounds.size.height / 2);
     [activityView addSubview:activityIndicatorView];
     [activityIndicatorView startAnimating];
-    
+	
+	UIView *activeContent = nil;
+	if (!enable) {
+		activeContent = ({
+			UIView *view = [[UIView alloc] initWithFrame:self.frame];
+			view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0];
+			view;
+		});
+		[activeContent addSubview:activityView];
+	} else {
+		activeContent = activityView;
+	}
+	
+	
     // associate the activity view with self
-    objc_setAssociatedObject (self, &CSToastActivityViewKey, activityView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject (self, &CSToastActivityViewKey, activeContent, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
-    [self addSubview:activityView];
+    [self addSubview:activeContent];
     
     [UIView animateWithDuration:style.fadeDuration
                           delay:0.0
@@ -379,6 +398,8 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
                              objc_setAssociatedObject (self, &CSToastActivityViewKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
                          }];
     }
+	
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 #pragma mark - Helpers
@@ -427,7 +448,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.shadowOpacity = 0.8;
         self.shadowRadius = 6.0;
         self.shadowOffset = CGSizeMake(4.0, 4.0);
-        self.imageSize = CGSizeMake(80.0, 80.0);
+        self.imageSize = CGSizeMake(20.0, 20.0);
         self.activitySize = CGSizeMake(100.0, 100.0);
         self.fadeDuration = 0.2;
     }

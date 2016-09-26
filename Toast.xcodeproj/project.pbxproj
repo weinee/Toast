@@ -12,13 +12,16 @@
 		151FC0DB13D34B7A007DC282 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151FC0DA13D34B7A007DC282 /* CoreGraphics.framework */; };
 		151FC12B13D3558E007DC282 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 151FC12A13D3558E007DC282 /* main.m */; };
 		151FC13413D36FCB007DC282 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 151FC13313D36FCB007DC282 /* QuartzCore.framework */; };
-		1536A60616B0E0CF0021C622 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1536A60516B0E0CF0021C622 /* UIView+Toast.m */; };
 		1536A60D16B0E0D60021C622 /* CSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1536A60916B0E0D60021C622 /* CSAppDelegate.m */; };
-		1536A60E16B0E0D60021C622 /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1536A60B16B0E0D60021C622 /* CSViewController.m */; };
 		1536A61316B0E0E20021C622 /* toast.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536A61216B0E0E20021C622 /* toast.png */; };
 		1536A62516B0E2050021C622 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536A62416B0E2050021C622 /* Default-568h@2x.png */; };
 		1536A62A16B0F0B20021C622 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536A62816B0F0B20021C622 /* Icon.png */; };
 		1536A62B16B0F0B20021C622 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1536A62916B0F0B20021C622 /* Icon@2x.png */; };
+		BA18FC561D98EAB80082EE3E /* toast_fail.png in Resources */ = {isa = PBXBuildFile; fileRef = BA18FC501D98EAB80082EE3E /* toast_fail.png */; };
+		BA18FC571D98EAB80082EE3E /* toast_sucess.png in Resources */ = {isa = PBXBuildFile; fileRef = BA18FC511D98EAB80082EE3E /* toast_sucess.png */; };
+		BA18FC581D98EAB80082EE3E /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = BA18FC531D98EAB80082EE3E /* UIView+Toast.m */; };
+		BA18FC591D98EAB80082EE3E /* WNHttpProcessHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BA18FC551D98EAB80082EE3E /* WNHttpProcessHUD.m */; };
+		BA18FC5C1D98EBCF0082EE3E /* CSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA18FC5B1D98EBCF0082EE3E /* CSViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +33,20 @@
 		151FC12813D35583007DC282 /* Toast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Toast-Prefix.pch"; path = "Toast/Toast-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		151FC12A13D3558E007DC282 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Toast/main.m; sourceTree = SOURCE_ROOT; };
 		151FC13313D36FCB007DC282 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1536A60416B0E0CF0021C622 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		1536A60516B0E0CF0021C622 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		1536A60816B0E0D60021C622 /* CSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAppDelegate.h; sourceTree = "<group>"; };
 		1536A60916B0E0D60021C622 /* CSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAppDelegate.m; sourceTree = "<group>"; };
-		1536A60A16B0E0D60021C622 /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
-		1536A60B16B0E0D60021C622 /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 		1536A61216B0E0E20021C622 /* toast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast.png; sourceTree = "<group>"; };
 		1536A62416B0E2050021C622 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
 		1536A62816B0F0B20021C622 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = SOURCE_ROOT; };
 		1536A62916B0F0B20021C622 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = SOURCE_ROOT; };
+		BA18FC501D98EAB80082EE3E /* toast_fail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_fail.png; sourceTree = "<group>"; };
+		BA18FC511D98EAB80082EE3E /* toast_sucess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toast_sucess.png; sourceTree = "<group>"; };
+		BA18FC521D98EAB80082EE3E /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		BA18FC531D98EAB80082EE3E /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		BA18FC541D98EAB80082EE3E /* WNHttpProcessHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WNHttpProcessHUD.h; sourceTree = "<group>"; };
+		BA18FC551D98EAB80082EE3E /* WNHttpProcessHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WNHttpProcessHUD.m; sourceTree = "<group>"; };
+		BA18FC5A1D98EBCF0082EE3E /* CSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSViewController.h; sourceTree = "<group>"; };
+		BA18FC5B1D98EBCF0082EE3E /* CSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +109,12 @@
 		1536A60316B0E0CF0021C622 /* Toast */ = {
 			isa = PBXGroup;
 			children = (
-				1536A60416B0E0CF0021C622 /* UIView+Toast.h */,
-				1536A60516B0E0CF0021C622 /* UIView+Toast.m */,
+				BA18FC501D98EAB80082EE3E /* toast_fail.png */,
+				BA18FC511D98EAB80082EE3E /* toast_sucess.png */,
+				BA18FC521D98EAB80082EE3E /* UIView+Toast.h */,
+				BA18FC531D98EAB80082EE3E /* UIView+Toast.m */,
+				BA18FC541D98EAB80082EE3E /* WNHttpProcessHUD.h */,
+				BA18FC551D98EAB80082EE3E /* WNHttpProcessHUD.m */,
 			);
 			name = Toast;
 			path = Toast/Toast;
@@ -112,10 +123,10 @@
 		1536A60716B0E0D60021C622 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				BA18FC5A1D98EBCF0082EE3E /* CSViewController.h */,
+				BA18FC5B1D98EBCF0082EE3E /* CSViewController.m */,
 				1536A60816B0E0D60021C622 /* CSAppDelegate.h */,
 				1536A60916B0E0D60021C622 /* CSAppDelegate.m */,
-				1536A60A16B0E0D60021C622 /* CSViewController.h */,
-				1536A60B16B0E0D60021C622 /* CSViewController.m */,
 			);
 			name = Demo;
 			path = Toast/Example;
@@ -198,8 +209,10 @@
 			files = (
 				1536A61316B0E0E20021C622 /* toast.png in Resources */,
 				1536A62516B0E2050021C622 /* Default-568h@2x.png in Resources */,
+				BA18FC561D98EAB80082EE3E /* toast_fail.png in Resources */,
 				1536A62A16B0F0B20021C622 /* Icon.png in Resources */,
 				1536A62B16B0F0B20021C622 /* Icon@2x.png in Resources */,
+				BA18FC571D98EAB80082EE3E /* toast_sucess.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1536A60616B0E0CF0021C622 /* UIView+Toast.m in Sources */,
+				BA18FC5C1D98EBCF0082EE3E /* CSViewController.m in Sources */,
+				BA18FC581D98EAB80082EE3E /* UIView+Toast.m in Sources */,
 				1536A60D16B0E0D60021C622 /* CSAppDelegate.m in Sources */,
-				1536A60E16B0E0D60021C622 /* CSViewController.m in Sources */,
+				BA18FC591D98EAB80082EE3E /* WNHttpProcessHUD.m in Sources */,
 				151FC12B13D3558E007DC282 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

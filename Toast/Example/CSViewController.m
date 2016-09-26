@@ -25,6 +25,7 @@
 
 #import "CSViewController.h"
 #import "UIView+Toast.h"
+#import "WNHttpProcessHUD.h"
 
 static NSString * ZOToastSwitchCellId   = @"ZOToastSwitchCellId";
 static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
@@ -193,14 +194,18 @@ static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
     } else if (indexPath.row == 3) {
         
         // Make toast with an image
-        [self.navigationController.view makeToast:@"This is a piece of toast with an image"
-                                         duration:2.0
-                                         position:CSToastPositionCenter
-                                            title:nil
-                                            image:[UIImage imageNamed:@"toast.png"]
-                                            style:nil
-                                       completion:nil];
-        
+		[WNHttpProcessHUD fadeOutSuccessHUDInView:self.navigationController.view withMessage:@"This is a piece of toast with a title, image, and completion block"];
+		[WNHttpProcessHUD fadeOutFinishHUDInView:self.navigationController.view withMessage:@"This is a piece of toast with a title, image, and completion block"];
+		[WNHttpProcessHUD fadeOutFailHUDInView:self.navigationController.view withMessage:@"This is a piece of toast with a title, image, and completion block"];
+		
+//        [self.navigationController.view makeToast:@"This is a piece of toast with an image"
+//                                         duration:2.0
+//                                         position:CSToastPositionCenter
+//                                            title:nil
+//                                            image:[UIImage imageNamed:@"toast.png"]
+//                                            style:nil
+//                                       completion:nil];
+		
     } else if (indexPath.row == 4) {
         
         // Make toast with an image, title, and completion block
@@ -261,9 +266,13 @@ static NSString * ZOToastDemoCellId     = @"ZOToastDemoCellId";
         
         // Make toast activity
         if (!self.isShowingActivity) {
-            [self.navigationController.view makeToastActivity:CSToastPositionCenter];
+			[WNHttpProcessHUD processBeginInView:self.navigationController.view];
         } else {
-            [self.navigationController.view hideToastActivity];
+			[WNHttpProcessHUD processSuccessInView:self.navigationController.view message:@"加载成功" processComplete:^{
+				NSLog(@"网络请求结束");
+			} messageComplete:^{
+				NSLog(@"信息显示结束");
+			}];
         }
         _showingActivity = !self.isShowingActivity;
         
